@@ -1,0 +1,28 @@
+[
+
+  {
+    "id" : 1,
+    "question": "血液温度低的动物就是冷血动物",
+    "answer": false
+  },
+  {
+    "id" : 2,
+    "question": "美国历史上第一所高等学府是哈佛大学",
+    "answer": true
+  },
+  {
+    "id" : 3,
+    "question": "西印度群岛位于大西洋西部",
+    "answer": true
+  },
+  {
+    "id" : 4,
+    "question": "企鹅一般在12月份产卵",
+    "answer": false
+  },
+  {
+    "id" : 5,
+    "question": "绿叶和红叶都可以进行光合作用",
+    "answer": true
+  }
+]

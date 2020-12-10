@@ -1,0 +1,32 @@
+[
+  {
+    "id" : 1,
+    "imageId": "l1.jpg",
+    "phoneName": "努比亚 nubia 红魔5S",
+    "phoneDetail" : "8GB+128GB 幻影黑 电竞游戏手机 144Hz屏幕刷新率 内置风扇散热"
+  },
+  {
+    "id" : 2,
+    "imageId": "l1.jpg",
+    "phoneName": "华为 HUAWEI nova 8 SE",
+    "phoneDetail": "高配版6.53英寸OLED真彩屏6400万超清四摄66W有线超级快充8GB+128GB幻夜黑全网通5G"
+  },
+  {
+    "id" : 3,
+    "imageId": "l1.jpg",
+    "phoneName": "摩托罗拉 razr",
+    "phoneDetail": "刀锋折叠屏手机 双模5G全网通 超薄无缝无折痕+大双屏 4800万超强自拍 8GB+256GB 锋雅黑"
+  },
+  {
+    "id" : 4,
+    "imageId": "l1.jpg",
+    "phoneName": "Apple iPhone 12 Pro Max",
+    "phoneDetail": "128GB 金色 支持移动联通电信5G 双卡双待手机"
+  },
+  {
+    "id" : 5,
+    "imageId": "l1.jpg",
+    "phoneName": "小米10 至尊纪念版",
+    "phoneDetail": "双模5G 骁龙865 120HZ高刷新率 120倍长焦镜头 120W快充 8GB+256GB 陶瓷黑 游戏手机"
+  }
+]
