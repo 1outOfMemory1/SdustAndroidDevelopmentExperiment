@@ -19,19 +19,18 @@ class PhoneAdapter (activity: Activity, val resourceId:Int, data:List<Phone>):
             view = LayoutInflater.from(context).inflate(resourceId,parent,false)
         }else
             view = convertView
-
         val phoneImage: ImageView = view.findViewById(R.id.phoneImage)
         val phoneName: TextView = view.findViewById(R.id.phoneName)
         val phoneDetail: TextView = view.findViewById(R.id.phoneDetail)
         val phone = getItem(position)
 
         if(phone != null){
+            // 设置没个item的图片资源id  手机名字 和 手机介绍
             phoneImage.setImageResource(phone.imageid)
             phoneName.text = phone.phoneName
             phoneDetail.text = phone.phoneDetail
         }
         return view
     }
-
 }
 

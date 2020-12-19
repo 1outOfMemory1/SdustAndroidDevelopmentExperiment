@@ -48,8 +48,4 @@
             android:layout_height="wrap_content"
             android:text="下一个"/>
     </LinearLayout>
-
-
-
-
 </LinearLayout>
