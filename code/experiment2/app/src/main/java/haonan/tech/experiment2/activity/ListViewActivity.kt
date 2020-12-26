@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_list_view.*
 
 
 class ListViewActivity : AppCompatActivity() {
-
     private var fileContent = ""
     private var phoneList:MutableList<Phone> = ArrayList<Phone>()
     override fun onCreate(savedInstanceState: Bundle?) {

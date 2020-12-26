@@ -15,7 +15,7 @@ class PhoneContentFragment:Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.phone_content_frag, container, false)
     }
-
+    // 针对平板的  响应点击事件的时候可以调用 进行刷新界面
     fun refresh(phoneName: String, phoneDetail: String,phoneImageId:String){
         contentLayoutt.visibility = View.VISIBLE
         phoneTitle.text = phoneName  //  刷新标题

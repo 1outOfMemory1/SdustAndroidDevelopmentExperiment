@@ -3,18 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!--ellipsize = end 是设置尾部缩略-->
-<!--    <TextView-->
-<!--        android:id="@+id/phoneTitle"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:maxLines="1"-->
-<!--        android:ellipsize="end"-->
-<!--        android:textSize="25sp"-->
-<!--        android:padding="10dp"-->
-<!--        />-->
-
-
     <ImageView
         android:id="@+id/phoneImage"
         android:layout_width="150dp"
