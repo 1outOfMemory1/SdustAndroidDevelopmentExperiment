@@ -23,7 +23,6 @@ class NewsContentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_content)
-
         val title = intent.getStringExtra("news_title")
         val content = intent.getStringExtra("news_content")
         if(title != null && content!=null ){

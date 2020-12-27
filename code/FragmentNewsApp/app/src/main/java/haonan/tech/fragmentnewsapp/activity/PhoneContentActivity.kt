@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.alibaba.fastjson.JSON
 import haonan.tech.fragmentnewsapp.R
 import haonan.tech.fragmentnewsapp.entity.Phone
 import haonan.tech.fragmentnewsapp.fragment.NewsContentFragment
