@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import haonan.tech.roomlearn.adapter.WordAdapter
 import haonan.tech.roomlearn.entity.Word
 import haonan.tech.roomlearn.viewModel.WordVIewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -11,16 +13,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     // wordViewModel 这个参数是专门负责视图和
     private lateinit var wordViewModel: WordVIewModel
+    private lateinit var myAdapter: WordAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         wordViewModel =
             ViewModelProvider.AndroidViewModelFactory(application).create(WordVIewModel::class.java)
+        myAdapter = WordAdapter(wordViewModel.getAllWordsLive())
+        wordRecyclerView.layoutManager = LinearLayoutManager(this)
+        wordRecyclerView.adapter = myAdapter
+
         wordViewModel.getAllWordsLive().observe(this, Observer {
-            var textStr: String = ""
-            it.forEach { ele -> textStr += ele.id.toString() + ":" + ele.word + "=" + ele.chineseMeaning + "\n" }
-            myTextView.text = textStr
+            myAdapter.setAllWords(it as ArrayList<Word>)
+            myAdapter.notifyDataSetChanged()
         })
         //  insert 按钮的点击事件监听  每点击一次 插入数据
         insertBtn.setOnClickListener {
