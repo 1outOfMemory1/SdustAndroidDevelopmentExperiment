@@ -14,12 +14,9 @@ abstract class   WordDatabase :RoomDatabase(){
         fun getWordDatabase(context: Context):WordDatabase?{
             if (INSTANCE == null){
                 INSTANCE = Room.databaseBuilder(context.applicationContext, WordDatabase::class.java,"word_database")
-                        .allowMainThreadQueries()
                         .build()
             }
             return INSTANCE
         }
-
     }
-
 }
