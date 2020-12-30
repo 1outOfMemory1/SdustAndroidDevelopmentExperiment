@@ -1,17 +1,13 @@
-package haonan.tech.roomlearn.adapter
+package haonan.tech.experment4.adapter
 
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
-import haonan.tech.roomlearn.R
-import haonan.tech.roomlearn.entity.Word
-import kotlinx.android.synthetic.main.cell_normal.view.*
-
-
+import haonan.tech.experment4.R
+import haonan.tech.experment4.entity.Word
 
 
 class WordAdapter(val WordList: LiveData<List<Word>>): RecyclerView.Adapter<WordAdapter.MyViewHolder>() {
@@ -24,7 +20,7 @@ class WordAdapter(val WordList: LiveData<List<Word>>): RecyclerView.Adapter<Word
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater: LayoutInflater = LayoutInflater.from(parent.context)
-        val itemView:View = layoutInflater.inflate(R.layout.cell_card, parent, false)
+        val itemView:View = layoutInflater.inflate(R.layout.cell_card_student, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -42,8 +38,8 @@ class WordAdapter(val WordList: LiveData<List<Word>>): RecyclerView.Adapter<Word
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        var textViewNumber:TextView = itemView.findViewById(R.id.textView_number)
-        var textViewEnglish:TextView = itemView.findViewById(R.id.textView_englishWord)
-        var textViewChinese:TextView = itemView.findViewById(R.id.textView_chineseWord)
+        var textViewNumber:TextView = itemView.findViewById(R.id.textView_course_sno)
+        var textViewEnglish:TextView = itemView.findViewById(R.id.textView_student_sname)
+        var textViewChinese:TextView = itemView.findViewById(R.id.textView_student_ssex)
     }
 }
