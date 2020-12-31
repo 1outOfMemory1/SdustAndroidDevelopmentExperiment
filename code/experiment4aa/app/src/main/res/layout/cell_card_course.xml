@@ -6,9 +6,6 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        app:cardElevation="2dp"
-        app:cardUseCompatPadding="true"
-        app:cardBackgroundColor="@color/design_default_color_on_primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -16,7 +13,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="0dp">
+        android:layout_marginBottom="0dp"
+        android:padding="8dp"
+        app:cardBackgroundColor="@color/design_default_color_on_primary"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,14 +42,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
+                android:contentDescription="TODO"
                 app:backgroundTint="#CDDC39"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintStart_toStartOf="@+id/guideline8"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/white_edit"
-                android:contentDescription="TODO" />
+                app:srcCompat="@drawable/white_edit" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/delete_course_btn"
@@ -57,13 +58,13 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:clickable="true"
+                android:contentDescription="TODO"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/modify_course_btn"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/white_delete"
-                android:contentDescription="TODO" />
+                app:srcCompat="@drawable/white_delete" />
 
             <TextView
                 android:id="@+id/textView_course_card_sno"

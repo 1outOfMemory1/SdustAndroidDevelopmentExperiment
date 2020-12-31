@@ -3,7 +3,6 @@ package haonan.tech.experment4.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import haonan.tech.experment4.entity.Student
-import haonan.tech.experment4.entity.Word
 
 @Dao
 interface StudentDao {
@@ -14,7 +13,7 @@ interface StudentDao {
     fun updateStudent(vararg arg: Student)
 
     @Query("DELETE FROM student WHERE sno = :sno ")
-    fun deleteStudentBySno(sno: Int)
+    fun deleteStudentBySno(vararg sno:Int?)
 
     @Query("DELETE FROM student")
     fun deleteAllStudents()

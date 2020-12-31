@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="sname"
-        app:layout_constraintEnd_toStartOf="@+id/cnameEditText"
+        app:layout_constraintEnd_toStartOf="@+id/snameEditText"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="ssex"
-        app:layout_constraintEnd_toStartOf="@+id/gradeEditText"
+        app:layout_constraintEnd_toStartOf="@+id/ssexEditText"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_cname" />
@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/gradeEditText"
+        android:id="@+id/ssexEditText"
         android:hint="seex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,11 +49,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/cnameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/snameEditText" />
 
 
     <EditText
-        android:id="@+id/cnameEditText"
+        android:id="@+id/snameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -76,5 +76,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/gradeEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/ssexEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

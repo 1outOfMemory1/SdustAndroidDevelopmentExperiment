@@ -43,8 +43,8 @@ class StudentActivity : AppCompatActivity() {
                 setTitle("增加学生")
                 setCancelable(false)
                 setPositiveButton("确定", DialogInterface.OnClickListener { dialogInterface, i ->
-                    val snameEditText = dialogView.findViewById<EditText>(R.id.cnameEditText)
-                    val ssexEditText = dialogView.findViewById<EditText>(R.id.gradeEditText)
+                    val snameEditText = dialogView.findViewById<EditText>(R.id.snameEditText)
+                    val ssexEditText = dialogView.findViewById<EditText>(R.id.ssexEditText)
                     val sageEditText = dialogView.findViewById<EditText>(R.id.sageEditText)
                     //Toast.makeText(context,snameEditText.text,Toast.LENGTH_SHORT).show()
                     val studentTemp = Student(null,snameEditText.text.toString(),ssexEditText.text.toString(),sageEditText.text.toString().toInt() )

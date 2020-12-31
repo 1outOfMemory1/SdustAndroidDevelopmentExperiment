@@ -48,8 +48,8 @@ class StudentAdapter(val application: Application, val StudentList: LiveData<Lis
         holder.modify_student_btn.setOnClickListener {
             Toast.makeText(thisContext, student.sno.toString(),Toast.LENGTH_SHORT).show()
             val dialogView: View = LayoutInflater.from(thisContext).inflate(R.layout.add_student_dialog, null)
-            val snameEditText = dialogView.findViewById<EditText>(R.id.cnameEditText)
-            val ssexEditText = dialogView.findViewById<EditText>(R.id.gradeEditText)
+            val snameEditText = dialogView.findViewById<EditText>(R.id.snameEditText)
+            val ssexEditText = dialogView.findViewById<EditText>(R.id.ssexEditText)
             val sageEditText = dialogView.findViewById<EditText>(R.id.sageEditText)
             snameEditText.setText(student.sname.toString())
             ssexEditText.setText(student.ssex.toString())
@@ -68,7 +68,16 @@ class StudentAdapter(val application: Application, val StudentList: LiveData<Lis
             }
         }
         holder.delete_student_btn.setOnClickListener {
-
+            AlertDialog.Builder(thisContext).apply {// 弹出对话框 如果点击确认会启动 answerActivity
+                setTitle("删除确认")
+                setCancelable(false)
+                setPositiveButton("确定", DialogInterface.OnClickListener { dialogInterface, i ->
+                    studentViewModel.deleteStudentBySno(student.sno!!)
+                })
+                setNegativeButton("取消", DialogInterface.OnClickListener { dialogInterface, i ->
+                })
+                show()
+            }
         }
 
     }
