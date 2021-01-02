@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fragment.HomeFragment"
+        android:label="主页"
+        tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/booksFragment"
+        android:name="com.example.fragment.BooksFragment"
+        android:label="书籍"
+        tools:layout="@layout/books_fragment" />
+    <fragment
+        android:id="@+id/mineFragment"
+        android:name="com.example.fragment.MineFragment"
+        android:label="我的"
+        tools:layout="@layout/mine_fragment" />
+    <fragment
+        android:id="@+id/shoppingCartFragment"
+        android:name="com.example.fragment.ShoppingCartFragment"
+        android:label="购物车"
+        tools:layout="@layout/shopping_cart_fragment" />
+</navigation>

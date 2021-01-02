@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dao.BookDao">
+    <select id="getAllBooks" resultType="com.example.entity.Book">
+        select * from book
+    </select>
+    <select id="getBooksByLabel"  resultType="com.example.entity.Book">
+        select * from book where bookLabel = #{label}
+    </select>
+
+<!--
+
+select   book.bookId as bookId, bookName, bookLabel,
+         bookPrice,bookAuthor,bookPress, bookDetail,bookCoverUrl
+from user,bookShoppingCart,book
+where bookShoppingCart.userId  = user.userId and
+      bookShoppingCart.bookId = book.bookId user.username = 123;
+
+-->
+
+    <select id="getShoppingCartBooksByUsername"  resultType="com.example.entity.Book">
+        select   book.bookId as bookId, bookName, bookLabel,bookPrice,bookAuthor,bookPress, bookDetail,bookCoverUrl
+        from user,bookShoppingCart,book
+        where bookShoppingCart.userId  = user.userId and bookShoppingCart.bookId = book.bookId and user.username = #{username};
+    </select>
+
+
+    <select id="getOrderBooksByUsername"  resultType="com.example.entity.Book">
+        select   book.bookId as bookId, bookName, bookLabel,bookPrice,bookAuthor,bookPress, bookDetail,bookCoverUrl
+        from user,bookOrder,book
+        where bookOrder.userId  = user.userId and bookOrder.bookId = book.bookId and  user.username = #{username};
+    </select>
+
+</mapper>
+
