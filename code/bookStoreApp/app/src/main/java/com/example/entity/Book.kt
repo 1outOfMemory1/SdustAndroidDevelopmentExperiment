@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Book(var bookId: Int, var bookName: String,
-           var bookLabel: String, var bookPrice: String,
+           var bookLabel: String, var bookPrice: Double,
            var bookAuthor: String, var bookPress: String,
            var bookDetail: String, var bookCoverUrl: String) : Parcelable
 {
@@ -12,7 +12,7 @@ class Book(var bookId: Int, var bookName: String,
         parcel.readInt(),
         parcel.readString()!!,
         parcel.readString()!!,
-        parcel.readString()!!,
+        parcel.readDouble()!!,
         parcel.readString()!!,
         parcel.readString()!!,
         parcel.readString()!!,
@@ -24,7 +24,7 @@ class Book(var bookId: Int, var bookName: String,
         parcel.writeInt(bookId)
         parcel.writeString(bookName)
         parcel.writeString(bookLabel)
-        parcel.writeString(bookPrice)
+        parcel.writeDouble(bookPrice)
         parcel.writeString(bookAuthor)
         parcel.writeString(bookPress)
         parcel.writeString(bookDetail)

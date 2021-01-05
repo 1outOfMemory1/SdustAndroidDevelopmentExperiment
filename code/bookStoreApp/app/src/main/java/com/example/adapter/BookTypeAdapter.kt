@@ -22,7 +22,7 @@ class BookTypeAdapter: ListAdapter<String, BookTypeAdapter.MyViewHolder>(DIFFCAL
         val holder = MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.book_type_cell,parent,false))
         val thisContext = holder.itemView.context
         holder.bookTypeCellBtn.setOnClickListener {
-            Toast.makeText(thisContext,holder.bookTypeCellBtn.text.toString() + "被点击",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(thisContext,holder.bookTypeCellBtn.text.toString() + "被点击",Toast.LENGTH_SHORT).show()
             _labelString.value = holder.bookTypeCellBtn.text.toString()
         }
         return holder

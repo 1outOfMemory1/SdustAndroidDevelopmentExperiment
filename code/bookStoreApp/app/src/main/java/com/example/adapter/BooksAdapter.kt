@@ -25,8 +25,10 @@ class BooksAdapter : ListAdapter<Book, BooksAdapter.MyViewHolder>(DIFFCALLBACK) 
         val holder = MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.book_cell,parent,false))
         val thisContext = holder.itemView.context
 
+
+
         val itemListener = holder.itemView.setOnClickListener {
-            Toast.makeText(thisContext,"bookcell被点击",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(thisContext,"bookcell被点击",Toast.LENGTH_SHORT).show()
             BookDetailActivity.actionStart(parent.context,getItem(holder.adapterPosition))
         }
 
@@ -47,7 +49,7 @@ class BooksAdapter : ListAdapter<Book, BooksAdapter.MyViewHolder>(DIFFCALLBACK) 
                 })
                 .into(holder.itemView.bookCover)
         holder.bookName.text = getItem(position).bookName
-        holder.bookPrice.text = getItem(position).bookPrice
+        holder.bookPrice.text = getItem(position).bookPrice.toString()
     }
 
     object DIFFCALLBACK: DiffUtil.ItemCallback<Book>() {

@@ -29,7 +29,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="0dp"
             android:layout_weight="2"
-            android:text="清空购物车"
+            android:text="删除选中"
             app:cornerRadius="10dp" />
 
         <TextView
@@ -43,11 +43,11 @@
 
         <TextView
             android:id="@+id/shopping_cart_fra_totalPrice"
-            android:layout_width="wrap_content"
+            android:layout_width="27dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:gravity="center"
-            android:text="20"
+            android:text="0"
             android:textSize="18sp" />
 
         <Button
@@ -57,7 +57,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="2"
-            android:text="结算"
+            android:text="结算选中"
             app:cornerRadius="10dp" />
     </LinearLayout>
 

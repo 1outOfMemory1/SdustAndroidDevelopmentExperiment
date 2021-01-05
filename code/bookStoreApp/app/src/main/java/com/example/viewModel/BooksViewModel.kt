@@ -45,7 +45,7 @@ class BooksViewModel(application: Application) : AndroidViewModel(application) {
                         val temp = tempResultMessage.data
                         val tempString:String = Gson().toJson(temp)
                         val bookList:List<Book> =Gson().fromJson(tempString,  object : TypeToken<List<Book>>() {}.type)
-                        Toast.makeText(thisApplication,"查询成功"  , Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(thisApplication,"查询成功"  , Toast.LENGTH_SHORT).show()
                         _bookListLive.value = bookList
                     }else{
                         Toast.makeText(thisApplication,"查询失败", Toast.LENGTH_SHORT).show()
@@ -69,7 +69,7 @@ class BooksViewModel(application: Application) : AndroidViewModel(application) {
                     val tempString:String = Gson().toJson(temp)
                     val bookTypeList:List<String> =Gson().fromJson(tempString,  object : TypeToken<List<String>>() {}.type)
                     _bookTypeListLive.value = bookTypeList
-                    Toast.makeText(thisApplication,"查询书籍类型成功"  , Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(thisApplication,"查询书籍类型成功"  , Toast.LENGTH_SHORT).show()
 
                 }else{
                     Toast.makeText(thisApplication,"查询失败", Toast.LENGTH_SHORT).show()
