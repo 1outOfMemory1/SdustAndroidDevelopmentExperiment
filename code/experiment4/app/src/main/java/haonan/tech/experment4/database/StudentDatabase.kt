@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import haonan.tech.experment4.dao.StudentDao
-import haonan.tech.experment4.dao.WordDao
 import haonan.tech.experment4.entity.Student
 
 @Database(entities = [Student::class], version = 1)

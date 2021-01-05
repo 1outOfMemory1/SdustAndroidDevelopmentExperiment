@@ -9,6 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface BookDao {
+    List<String> getAllBookType();
     List<Book> getAllBooks();
     List<Book> getBooksByLabel(@Param("label") String label);
 

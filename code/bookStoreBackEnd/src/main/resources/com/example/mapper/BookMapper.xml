@@ -10,15 +10,6 @@
         select * from book where bookLabel = #{label}
     </select>
 
-<!--
-
-select   book.bookId as bookId, bookName, bookLabel,
-         bookPrice,bookAuthor,bookPress, bookDetail,bookCoverUrl
-from user,bookShoppingCart,book
-where bookShoppingCart.userId  = user.userId and
-      bookShoppingCart.bookId = book.bookId user.username = 123;
-
--->
 
     <select id="getShoppingCartBooksByUsername"  resultType="com.example.entity.Book">
         select   book.bookId as bookId, bookName, bookLabel,bookPrice,bookAuthor,bookPress, bookDetail,bookCoverUrl
@@ -31,6 +22,10 @@ where bookShoppingCart.userId  = user.userId and
         select   book.bookId as bookId, bookName, bookLabel,bookPrice,bookAuthor,bookPress, bookDetail,bookCoverUrl
         from user,bookOrder,book
         where bookOrder.userId  = user.userId and bookOrder.bookId = book.bookId and  user.username = #{username};
+    </select>
+
+    <select id="getAllBookType" resultType="java.lang.String">
+        select distinct bookLabel from book;
     </select>
 
 </mapper>

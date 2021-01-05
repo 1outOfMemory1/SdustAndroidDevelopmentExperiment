@@ -5,6 +5,7 @@ import com.example.entity.Book;
 import java.util.List;
 
 public interface BookService {
+    List<String> getAllBookType();
     List<Book> getAllBooks();
     List<Book> getBooksByLabel(String label);
     List<Book> getShoppingCartBooksByUsername(String username);

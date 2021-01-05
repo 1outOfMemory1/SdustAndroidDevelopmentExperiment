@@ -21,8 +21,6 @@ interface StudentDao {
     @Query("SELECT * FROM student ORDER BY sno DESC ")
     fun getAllStudentsLive(): LiveData<List<Student>>
 
-
     @Update()
     fun updateStudent(student:Student)
-
 }

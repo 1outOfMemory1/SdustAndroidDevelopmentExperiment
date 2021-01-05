@@ -16,15 +16,15 @@ import haonan.tech.experment4.R
 import haonan.tech.experment4.adapter.ScAdapter
 import haonan.tech.experment4.entity.Sc
 import haonan.tech.experment4.viewModel.ScVIewModel
-import kotlinx.android.synthetic.main.activity_course.*
+import kotlinx.android.synthetic.main.activity_sc.*
 
-class CourseActivity : AppCompatActivity() {
+class ScActivity : AppCompatActivity() {
 
     lateinit var scViewModel :ScVIewModel
     private lateinit var myAdapter: ScAdapter
     companion object {
         fun actionStart(context: Context, sno: Int, sname: String, ssex: String, sage: Int) {
-            val courseIntent = Intent(context, CourseActivity::class.java).apply {
+            val courseIntent = Intent(context, ScActivity::class.java).apply {
                 putExtra("sno", sno.toString())
                 putExtra("sname", sname)
                 putExtra("ssex", ssex)
@@ -35,7 +35,7 @@ class CourseActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_course)
+        setContentView(R.layout.activity_sc)
         val sno:Int = intent.getStringExtra("sno").toString().toInt()
         textView_course_sno.text = sno.toString()
         textView_course_sname.text = intent.getStringExtra("sname")

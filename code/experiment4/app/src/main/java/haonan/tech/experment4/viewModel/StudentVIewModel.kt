@@ -31,6 +31,4 @@ class StudentVIewModel(application: Application) : AndroidViewModel(application)
     fun deleteStudentBySno(sno: Int){
         studentRepository.deleteStudentBySno(sno)
     }
-
-
 }

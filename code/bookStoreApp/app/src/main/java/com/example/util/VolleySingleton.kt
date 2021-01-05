@@ -11,7 +11,6 @@ class VolleySingleton private constructor(context: Context){
             INSTANCE?: synchronized(this) {
                 VolleySingleton(context).also { INSTANCE = it }
             }
-
     }
 
     val requestQueue: RequestQueue by lazy {

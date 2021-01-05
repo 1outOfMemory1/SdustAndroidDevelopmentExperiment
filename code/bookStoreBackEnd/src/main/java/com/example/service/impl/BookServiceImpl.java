@@ -12,6 +12,12 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
     @Autowired
     private BookDao bookDao;
+
+    @Override
+    public List<String> getAllBookType() {
+        return bookDao.getAllBookType();
+    }
+
     @Override
     public List<Book> getAllBooks() {
         return bookDao.getAllBooks();

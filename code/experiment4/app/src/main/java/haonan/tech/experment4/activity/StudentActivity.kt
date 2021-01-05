@@ -14,8 +14,7 @@ import haonan.tech.experment4.R
 import haonan.tech.experment4.adapter.StudentAdapter
 import haonan.tech.experment4.entity.Student
 import haonan.tech.experment4.viewModel.StudentVIewModel
-import kotlinx.android.synthetic.main.activity_main.*
-
+import kotlinx.android.synthetic.main.activity_student.*
 
 
 class StudentActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ class StudentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_student)
         studentViewModel =
             ViewModelProvider.AndroidViewModelFactory(application).create(StudentVIewModel::class.java)
         myAdapter = StudentAdapter(application ,studentViewModel.getAllStudentsLive())

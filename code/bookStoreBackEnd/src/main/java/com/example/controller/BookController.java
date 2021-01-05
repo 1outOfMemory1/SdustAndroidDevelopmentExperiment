@@ -44,5 +44,10 @@ public class BookController {
     public ResultMessage getOrderBooksByUsername(String username){
         return new ResultMessage(200,"查询订单信息成功",bookService.getOrderBooksByUsername(username));
     }
+    @RequestMapping("getAllBookType")
+    public ResultMessage getAllBookType(){
+        return new ResultMessage(200,"查询所有书类型成功",bookService.getAllBookType());
+    }
+
 
 }

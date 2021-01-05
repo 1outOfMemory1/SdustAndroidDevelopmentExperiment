@@ -14,7 +14,7 @@
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.RoomLearn.NoActionBar" >
         </activity>
-        <activity android:name=".activity.CourseActivity" />
+        <activity android:name=".activity.ScActivity" />
         <activity android:name=".activity.StudentActivity" />
         <activity android:name=".activity.LoginActivity" >
             <intent-filter>

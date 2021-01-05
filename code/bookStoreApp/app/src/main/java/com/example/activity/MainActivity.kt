@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         init()
+        //Log.e("aa", currentUser.toString())
 
     }
     private fun init(){
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         val configuration: AppBarConfiguration = AppBarConfiguration.Builder(R.id.homeFragment, R.id.booksFragment, R.id.shoppingCartFragment, R.id.mineFragment).build()
         NavigationUI.setupActionBarWithNavController(this,navController,configuration)
         NavigationUI.setupWithNavController(bottomNavigationView,navController)
-        currentUser = intent.getParcelableExtra<User>("user")!!
+        //currentUser = intent.getParcelableExtra<User>("user")!!
 
     }
 }

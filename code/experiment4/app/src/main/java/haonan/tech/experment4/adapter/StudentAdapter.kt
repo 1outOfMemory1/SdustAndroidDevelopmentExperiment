@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import haonan.tech.experment4.R
-import haonan.tech.experment4.activity.CourseActivity
+import haonan.tech.experment4.activity.ScActivity
 import haonan.tech.experment4.entity.Student
 import haonan.tech.experment4.viewModel.StudentVIewModel
 
@@ -42,7 +42,7 @@ class StudentAdapter(val application: Application, val StudentList: LiveData<Lis
         holder.textViewSage.text = student.sage.toString()
         val thisContext = holder.itemView.context
         holder.itemView.setOnClickListener {
-            CourseActivity.actionStart(thisContext,student.sno!!,student.sname!!,student.ssex!!,student.sage!! )
+            ScActivity.actionStart(thisContext,student.sno!!,student.sname!!,student.ssex!!,student.sage!! )
         }
 
         holder.modify_student_btn.setOnClickListener {
@@ -84,8 +84,6 @@ class StudentAdapter(val application: Application, val StudentList: LiveData<Lis
         }
 
     }
-
-
     override fun getItemCount(): Int {
         return  allStudents.size
     }

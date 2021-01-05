@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley
 import com.example.entity.ResultMessage
 import com.example.entity.User
 import com.example.test.databinding.ActivityLoginBinding
+import com.example.util.GetConfig
 import com.example.util.VolleySingleton
 import com.google.gson.Gson
 import org.json.JSONObject
@@ -41,10 +42,15 @@ class LoginActivity : AppCompatActivity() {
                     val tempResultMessage:ResultMessage = Gson().fromJson(it,ResultMessage::class.java)
                     if (tempResultMessage.code == 200){
                         Toast.makeText(this,"登录成功",Toast.LENGTH_SHORT).show()
+                        val temp = tempResultMessage.data
+                        //Log.e("aa", temp)
+                        val currentUser = Gson().fromJson(temp.toString(),User::class.java)
+                        MainActivity.actionStart(this,currentUser)
+                    }else{
+                        Toast.makeText(this,"登录失败，账号或者密码错误",Toast.LENGTH_SHORT).show()
                     }
-                    val currentUser = Gson().fromJson(tempResultMessage.data.toString(),User::class.java)
-                    MainActivity.actionStart(this,currentUser)
-                    Log.e("aa", currentUser.toString())
+
+//                    Log.e("aa", currentUser.toString())
                 },
                 Response.ErrorListener {
                     Log.e("aa",it.toString())
@@ -79,10 +85,8 @@ class LoginActivity : AppCompatActivity() {
     fun init(){
         loginLayoutViewBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginLayoutViewBinding.root)
-        // 读取json文件信息
-        val fileContent = assets.open("config.json").bufferedReader().use { it.readText() }
         // 解析成json对象
-        val jsonObject =  JSONObject(fileContent)
+        val jsonObject:JSONObject = GetConfig(assets).getJsonConfig()
         // 读出基地址
         baseUrl = jsonObject["baseUrl"].toString()
         Log.e("tag",baseUrl)
