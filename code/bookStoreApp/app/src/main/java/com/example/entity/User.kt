@@ -4,9 +4,9 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class User(): Parcelable{
-    private var userId:Int = 0
-    private var username:String? = ""
-    private var password:String? = ""
+     var userId:Int = 0
+     var username:String? = ""
+     var password:String? = ""
 
     constructor(parcel: Parcel) : this() {
         userId = parcel.readInt()

@@ -38,7 +38,12 @@ class MainActivity : AppCompatActivity() {
         val configuration: AppBarConfiguration = AppBarConfiguration.Builder(R.id.homeFragment, R.id.booksFragment, R.id.shoppingCartFragment, R.id.mineFragment).build()
         NavigationUI.setupActionBarWithNavController(this,navController,configuration)
         NavigationUI.setupWithNavController(bottomNavigationView,navController)
-        //currentUser = intent.getParcelableExtra<User>("user")!!
-
+        //   拿到当前登录的用户
+        currentUser  = intent.getParcelableExtra<User>("user")!!
+        val editor =  getSharedPreferences("currentUser",Context.MODE_PRIVATE).edit()
+        editor.putInt("userId",currentUser.userId)
+        editor.putString("userName",currentUser.username)
+        editor.apply()
     }
+
 }

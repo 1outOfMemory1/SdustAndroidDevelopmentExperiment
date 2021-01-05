@@ -34,33 +34,30 @@ class BookDetailActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_detail)
-        val book :Book = intent.getParcelableExtra<Book>("book")!!
+        val book :Book = intent.getParcelableExtra("book")!!
         book_detail_name.text = book.bookName
         book_detail_detail.text = book.bookDetail
         book_detail_price.text = book.bookPrice
         book_detail_addToShoppingCartBtn.setOnClickListener {
-            Toast.makeText(this,"加入购物车成功",Toast.LENGTH_SHORT).show()
-//            val stringRequest = MyStringRequest(
-//                Request.Method.GET,
-//                "$baseUrl/bookApi/getBooksByLabel?label=$label",
-//                Response.Listener {
-//                    val tempResultMessage: ResultMessage = Gson().fromJson(it, ResultMessage::class.java)
-//                    if (tempResultMessage.code == 200){
-//                        val temp = tempResultMessage.data
-//                        val tempString:String = Gson().toJson(temp)
-//                        val bookList:List<Book> =
-//                            Gson().fromJson(tempString,  object : TypeToken<List<Book>>() {}.type)
-//                        Toast.makeText(thisApplication,"查询成功"  , Toast.LENGTH_SHORT).show()
-//                        _bookListLive.value = bookList
-//                    }else{
-//                        Toast.makeText(thisApplication,"查询失败", Toast.LENGTH_SHORT).show()
-//                    }
-//                },
-//                Response.ErrorListener {
-//                    Log.e("aa",it.toString())
-//                }
-//            )
-//            VolleySingleton.getInstance(getApplication()).requestQueue.add(stringRequest)
+            val prefs =  getSharedPreferences("currentUser",Context.MODE_PRIVATE)
+            val userId:Int = prefs.getInt("userId",0)
+
+            val stringRequest = MyStringRequest(
+                Request.Method.GET,
+                "$baseUrl/restApi/shoppingCart/add?userId=$userId&bookId=${book.bookId}",
+                Response.Listener {
+                    val tempResultMessage: ResultMessage = Gson().fromJson(it, ResultMessage::class.java)
+                    if (tempResultMessage.code == 200){
+                        Toast.makeText(this,"加入购物车成功",Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(this,"查询失败", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                Response.ErrorListener {
+                    Log.e("aa",it.toString())
+                }
+            )
+            VolleySingleton.getInstance(getApplication()).requestQueue.add(stringRequest)
         }
 
     }

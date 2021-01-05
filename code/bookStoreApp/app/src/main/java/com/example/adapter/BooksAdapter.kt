@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
@@ -28,9 +27,6 @@ class BooksAdapter : ListAdapter<Book, BooksAdapter.MyViewHolder>(DIFFCALLBACK) 
 
         val itemListener = holder.itemView.setOnClickListener {
             Toast.makeText(thisContext,"bookcell被点击",Toast.LENGTH_SHORT).show()
-//            val bookTemp1 = Book(1,"aa","aa","aa","aa"
-//                ,"aa","aa","aa")
-
             BookDetailActivity.actionStart(parent.context,getItem(holder.adapterPosition))
         }
 

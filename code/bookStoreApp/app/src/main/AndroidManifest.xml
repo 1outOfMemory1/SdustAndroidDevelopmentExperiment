@@ -12,14 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Test"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.activity.BookDetailActivity"></activity>
-        <activity android:name="com.example.activity.LoginActivity"></activity>
-        <activity android:name="com.example.activity.MainActivity">
+        <activity android:name="com.example.activity.BookDetailActivity">
+
+        </activity>
+        <activity android:name="com.example.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.activity.MainActivity">
+
         </activity>
     </application>
 

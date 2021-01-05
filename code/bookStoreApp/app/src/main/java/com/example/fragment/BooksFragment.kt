@@ -35,7 +35,7 @@ class BooksFragment : Fragment() {
         val bookTypeAdapter = BookTypeAdapter()
         book_header_label_recycler.adapter = bookTypeAdapter
         book_header_label_recycler.layoutManager =
-            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+                LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
 
         viewModel = ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory(requireActivity().application)).get(BooksViewModel::class.java)
 
